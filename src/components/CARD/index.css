@@ -11,7 +11,7 @@ section .container .item {
   display: flex;
   flex-direction: column;
   width: 24.25rem;
-  height: 6.5rem;
+  height: 6rem;
   padding: 1.25rem;
   border-radius: 1.25rem;
   margin-top: 1.5rem;
@@ -22,7 +22,6 @@ section .container .item {
 }
 
 .container .item .title a {
-  text-decoration: none;
   display: inline-block;
   color: #837e9f;
   font-family: 'Merriweather Sans';
@@ -37,6 +36,10 @@ section .container .item {
   font-weight: 400;
   font-size: 0.875rem;
   margin-top: 1.25rem;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .container .item .stats {
@@ -44,7 +47,6 @@ section .container .item {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-inline-end: 1.5rem;
   font-family: 'Merriweather Sans';
   font-style: normal;
   font-weight: 400;
@@ -53,12 +55,14 @@ section .container .item {
   margin-top: 1rem;
 }
 
-.container .item .stats .starIcon {
+.statsNumber {
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.container .item .stats .forksIcon {
-  display: flex;
+.stars {
+  margin-inline-end: 1rem;
 }
 
 .container .item .stats .languageIcon {

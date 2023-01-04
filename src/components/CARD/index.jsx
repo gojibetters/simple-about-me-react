@@ -7,7 +7,7 @@ function Card() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        'https://api.github.com/users/gojibetters/repos'
+        'https://api.github.com/users/philhawksworth/repos'
       )
       const data = await response.json()
 
@@ -23,23 +23,29 @@ function Card() {
         {repositorys.map(repository => {
           return (
             <div className="item" key={repository.id}>
-              <div className="title">{repository.name}</div>
+              <div className="title">
+                <a href={repository.html_url}>{repository.name}</a>
+              </div>
 
               <div className="description">{repository.description}</div>
 
               <div className="stats">
-                <div className="starIcon">
-                  <img src={require('../../assets/star.svg').default} />
+                <div className="statsNumber">
+                  <img src={require('../../assets/star.svg').default} alt="" />
                   <div className="stars">{repository.stargazers_count}</div>
-                </div>
 
-                <div className="forksIcon">
-                  <img src={require('../../assets/git-branch.svg').default} />
+                  <img
+                    src={require('../../assets/git-branch.svg').default}
+                    alt=""
+                  />
                   <div className="forks">{repository.forks}</div>
                 </div>
 
                 <div className="languageIcon">
-                  <img src={require('../../assets/yellipse.svg').default} />
+                  <img
+                    src={require('../../assets/yellipse.svg').default}
+                    alt=""
+                  />
                   <div className="language">{repository.language}</div>
                 </div>
               </div>

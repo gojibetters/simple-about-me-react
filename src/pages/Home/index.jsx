@@ -15,6 +15,7 @@ function Home() {
             <a
               href="https://github.com/gojibetters?tab=repositories"
               target="_blank"
+              rel="noreferrer"
             >
               See all
             </a>

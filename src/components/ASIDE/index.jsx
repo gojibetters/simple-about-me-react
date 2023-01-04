@@ -36,46 +36,58 @@ function Aside() {
       <section className="info">
         <div className="basicInfo">
           <div className="photo">
-            <img src={user.avatar} />
+            <img src={user.avatar} alt="User avatar" />
           </div>
           <div className="name">{user.name}</div>
           <div className="bio">{user.bio}</div>
         </div>
         <div className="socialMedia">
           <div className="item">
-            <img src={require('../../assets/map-pin.svg').default} />
+            <img src={require('../../assets/map-pin.svg').default} alt="" />
             <div className="location">
-              <a href="https://www.google.com/search?q=brazil" target="_blank">
+              <a
+                href="https://www.google.com/search?q=brazil"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {user.location}
               </a>
             </div>
           </div>
           <div className="item">
-            <img src={require('../../assets/briefcase.svg').default} />
+            <img src={require('../../assets/briefcase.svg').default} alt="" />
             <div className="company">
-              <a href="https://lab2dev.com/" target="_blank">
+              <a href="https://lab2dev.com/" target="_blank" rel="noreferrer">
                 {user.company}
               </a>
             </div>
           </div>
           <div className="item">
-            <img src={require('../../assets/github.svg').default} />
+            <img src={require('../../assets/github.svg').default} alt="" />
             <div className="github">
-              <a href="https://github.com/gojibetters" target="_blank">
+              <a
+                href="https://github.com/gojibetters"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {user.github}
               </a>
             </div>
           </div>
           <div className="item">
-            <img src={require('../../assets/linkedin.svg').default} />
+            <img src={require('../../assets/linkedin.svg').default} alt="" />
             <div className="linkedin">
-              <a href="https://www.linkedin.com/in/brunopatez/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/brunopatez/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {user.linkedin}
               </a>
             </div>
           </div>
           <div className="item">
-            <img src={require('../../assets/mail.svg').default} />
+            <img src={require('../../assets/mail.svg').default} alt="" />
             <div className="email">
               <a href="mailto:brunoapatez@gmail.com">Contact me</a>
             </div>
