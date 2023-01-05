@@ -5,7 +5,7 @@
   width: 70rem;
   height: 2.5rem;
   margin-left: 1.5rem;
-  margin-right: 0.5rem;
+  margin-right: 1.5rem;
 
   padding: 1.5rem;
   border-radius: 1.25rem;
@@ -37,4 +37,10 @@
 
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 1650px) {
+  .sectionProjects {
+    width: 59rem;
+  }
 }

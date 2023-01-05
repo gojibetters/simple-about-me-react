@@ -170,3 +170,9 @@
   font-weight: 700;
   font-size: 14px;
 }
+
+@media (max-width: 1650px) {
+  .sectionAside {
+    width: 15rem;
+  }
+}

@@ -69,3 +69,10 @@
 .languageIcon {
   display: flex;
 }
+
+@media (max-width: 1650px) {
+  .sectionRepository {
+    width: 59rem;
+    margin-inline: 3rem;
+  }
+}
