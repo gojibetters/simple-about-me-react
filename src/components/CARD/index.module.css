@@ -1,54 +1,55 @@
-section .container {
+.sectionRepository {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+
+  width: 70rem;
 }
 
-section .container .item {
+.title a {
+  display: inline-block;
+  color: #837e9f;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.statsNumber img,
+.languageIcon img {
+  margin-right: 0.5rem;
+}
+
+.item {
   display: flex;
   flex-direction: column;
   width: 24.25rem;
   height: 6rem;
+
   padding: 1.25rem;
   border-radius: 1.25rem;
-  margin-top: 1.5rem;
+
   background-color: #302f3d;
+  margin: 1rem 0 1rem;
   margin-inline: 1.25rem;
   color: #837e9f;
   line-height: 1.25rem;
 }
 
-.container .item .title a {
-  display: inline-block;
-  color: #837e9f;
-  font-family: 'Merriweather Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.container .item .description {
-  font-family: 'Merriweather Sans';
-  font-style: normal;
+.description {
   font-weight: 400;
   font-size: 0.875rem;
   margin-top: 1.25rem;
   display: inline-block;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.container .item .stats {
+.stats {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Merriweather Sans';
-  font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.125rem;
@@ -65,10 +66,6 @@ section .container .item {
   margin-inline-end: 1rem;
 }
 
-.container .item .stats .languageIcon {
+.languageIcon {
   display: flex;
-}
-
-.container .item .stats img {
-  margin-right: 0.5rem;
 }

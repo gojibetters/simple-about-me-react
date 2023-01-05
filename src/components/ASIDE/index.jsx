@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './index.css'
+import styles from './index.module.css'
 
 function Aside() {
   const [user, setUser] = useState({
@@ -11,6 +11,30 @@ function Aside() {
     github: '',
     linkedin: ''
   })
+  const tech = [
+    'JavaScript',
+    'ReactJS',
+    'NodeJS',
+    'Git',
+    'GitHub',
+    'HTML',
+    'CSS',
+    'JAVA'
+  ]
+  const experience = [
+    {
+      company: 'Lab2Dev',
+      date: '2022 - Currently',
+      office: 'Developer'
+    }
+  ]
+  const education = [
+    {
+      school: 'ITB Brasílio Flores de Azevedo',
+      date: '2020 - 2022',
+      description: 'Technical high school in Systems Development'
+    }
+  ]
 
   useEffect(() => {
     async function fetchData() {
@@ -33,98 +57,100 @@ function Aside() {
 
   return (
     <div>
-      <section className="info">
-        <div className="basicInfo">
-          <div className="photo">
-            <img src={user.avatar} alt="User avatar" />
-          </div>
-          <div className="name">{user.name}</div>
-          <div className="bio">{user.bio}</div>
+      <section className={styles.sectionAside}>
+        <div className={styles.basicInfo}>
+          <img src={user.avatar} alt="User avatar" className={styles.avatar} />
+          <div className={styles.name}>{user.name}</div>
+          <div className={styles.bio}>{user.bio}</div>
         </div>
-        <div className="socialMedia">
-          <div className="item">
+
+        <div className={styles.socialMedia}>
+          <div className={styles.location}>
             <img src={require('../../assets/map-pin.svg').default} alt="" />
-            <div className="location">
-              <a
-                href="https://www.google.com/search?q=brazil"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {user.location}
-              </a>
-            </div>
+            <a
+              href="https://www.google.com/search?q=brazil"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {user.location}
+            </a>
           </div>
-          <div className="item">
+
+          <div className={styles.company}>
             <img src={require('../../assets/briefcase.svg').default} alt="" />
-            <div className="company">
-              <a href="https://lab2dev.com/" target="_blank" rel="noreferrer">
-                {user.company}
-              </a>
-            </div>
+            <a href="https://lab2dev.com/" target="_blank" rel="noreferrer">
+              {user.company}
+            </a>
           </div>
-          <div className="item">
+
+          <div className={styles.github}>
             <img src={require('../../assets/github.svg').default} alt="" />
-            <div className="github">
-              <a
-                href="https://github.com/gojibetters"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {user.github}
-              </a>
-            </div>
+
+            <a
+              href="https://github.com/gojibetters"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {user.github}
+            </a>
           </div>
-          <div className="item">
+
+          <div className={styles.linkedin}>
             <img src={require('../../assets/linkedin.svg').default} alt="" />
-            <div className="linkedin">
-              <a
-                href="https://www.linkedin.com/in/brunopatez/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {user.linkedin}
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/brunopatez/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {user.linkedin}
+            </a>
           </div>
-          <div className="item">
+
+          <div className={styles.email}>
             <img src={require('../../assets/mail.svg').default} alt="" />
-            <div className="email">
-              <a href="mailto:brunoapatez@gmail.com">Contact me</a>
-            </div>
+            <a href="mailto:brunoapatez@gmail.com">Contact me</a>
           </div>
         </div>
-        <div className="technologies">
-          <div className="text">Technologies</div>
-          <div className="item">JavaScript</div>
-          <div className="item">ReactJS</div>
-          <div className="item">NodeJS</div>
-          <div className="item">Git</div>
-          <div className="item">GitHub</div>
-          <div className="item">HTML</div>
-          <div className="item">CSS</div>
-          <div className="item">JAVA</div>
+
+        <div className={styles.technologies}>
+          <h1>Technologies</h1>
+          <ul className={styles.ulTechnologies}>
+            {tech.map(item => {
+              return <li>{item}</li>
+            })}
+          </ul>
         </div>
-        <div className="experience">
-          <div className="text">Experience</div>
-          <div className="textExperience">
-            <ul>
-              <li>LAB2DEV</li>
+
+        <div className={styles.experience}>
+          <h1>Experience</h1>
+          <div className={styles.textExperience}>
+            <ul className={styles.ulExperience}>
+              {experience.map(item => {
+                return (
+                  <li key={item.id}>
+                    <h3>{item.company}</h3>
+                    <h4>{item.date}</h4>
+                    <h5>{item.office}</h5>
+                  </li>
+                )
+              })}
             </ul>
-            2022 - Currently
-            <br />
-            Developer
           </div>
         </div>
-        <div className="education">
-          <div className="text">Education</div>
-          <div className="textEducation">
-            <ul>
-              <li>ITB Brasílio Flores de Azevedo</li>
-            </ul>
-            2020 - 2022
-            <br />
-            Technical high school in Systems Development
-          </div>
+
+        <div className={styles.education}>
+          <h1>Education</h1>
+          <ul className={styles.ulEducation}>
+            {education.map(item => {
+              return (
+                <li>
+                  <h3>{item.school}</h3>
+                  <h4>{item.date}</h4>
+                  <h5>{item.description}</h5>
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </section>
     </div>

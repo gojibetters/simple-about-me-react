@@ -1,0 +1,40 @@
+.sectionProjects {
+  display: flex;
+  flex-direction: column;
+
+  width: 70rem;
+  height: 2.5rem;
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background-color: #302f3d;
+}
+
+.sectionProjects {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionProjects h1 {
+  display: flex;
+  font-weight: 700;
+  font-size: 20px;
+
+  color: #837e9f;
+}
+
+.sectionProjects a {
+  font-weight: 400;
+  font-size: 14px;
+  color: #837e9f;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+}

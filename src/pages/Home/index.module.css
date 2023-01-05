@@ -1,0 +1,15 @@
+body {
+  background-color: #22212c;
+
+  margin: 2.5rem 2.5rem 2.5rem;
+}
+
+.repository {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
