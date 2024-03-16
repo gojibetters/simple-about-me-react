@@ -1,6 +1,6 @@
 import styles from './index.module.css'
 
-function Header() {
+export function Header() {
   return (
     <section className={styles.sectionProjects}>
       <div className={styles.header}>
@@ -16,5 +16,3 @@ function Header() {
     </section>
   )
 }
-
-export default Header

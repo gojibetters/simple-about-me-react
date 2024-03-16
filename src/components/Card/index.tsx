@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import { useCard } from './useCard'
+import styles from './index.module.css'
 import star from '../../assets/star.svg'
 import gitBranch from '../../assets/git-branch.svg'
 import yellipse from '../../assets/yellipse.svg'
-import styles from './index.module.css'
 
-function Card() {
-  const [repositorys, setRepositorys] = useState([])
+export function Card() {
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(
-        'https://api.github.com/users/gojibetters/repos'
-      )
-      const data = await response.json()
-
-      setRepositorys(data)
-    }
-
-    fetchData()
-  }, [])
+  const { repositorys } = useCard()
 
   return (
     <section className={styles.sectionRepository}>
@@ -63,5 +51,3 @@ function Card() {
     </section>
   )
 }
-
-export default Card

@@ -6,7 +6,34 @@ import linkedin from '../../assets/linkedin.svg'
 import mail from '../../assets/mail.svg'
 import styles from './index.module.css'
 
-function Aside() {
+const tech = [
+  'JavaScript',
+  'ReactJS',
+  'NodeJS',
+  'Git',
+  'GitHub',
+  'HTML',
+  'CSS',
+  'JAVA'
+]
+
+const experience = [
+  {
+    company: 'Lab2Dev',
+    date: '2022 - Currently',
+    office: 'Developer'
+  }
+]
+
+const education = [
+  {
+    school: 'ITB Brasílio Flores de Azevedo',
+    date: '2020 - 2022',
+    description: 'Technical high school in Systems Development'
+  }
+]
+
+export function Aside() {
   const [user, setUser] = useState({
     avatar: '',
     name: '',
@@ -16,45 +43,22 @@ function Aside() {
     github: '',
     linkedin: ''
   })
-  const tech = [
-    'JavaScript',
-    'ReactJS',
-    'NodeJS',
-    'Git',
-    'GitHub',
-    'HTML',
-    'CSS',
-    'JAVA'
-  ]
-  const experience = [
-    {
-      company: 'Lab2Dev',
-      date: '2022 - Currently',
-      office: 'Developer'
-    }
-  ]
-  const education = [
-    {
-      school: 'ITB Brasílio Flores de Azevedo',
-      date: '2020 - 2022',
-      description: 'Technical high school in Systems Development'
-    }
-  ]
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('https://api.github.com/users/gojibetters')
-      const data = await response.json()
-
-      setUser({
-        avatar: data.avatar_url,
-        name: data.name,
-        bio: data.bio,
-        location: data.location,
-        company: data.company,
-        github: data.login,
-        linkedin: data.name
-      })
+      await fetch('https://api.github.com/users/gojibetters')
+      .then((response) => response.json())
+      .then((data) =>
+        setUser({
+          avatar: data.avatar_url,
+          name: data.name,
+          bio: data.bio,
+          location: data.location,
+          company: data.company,
+          github: data.login,
+          linkedin: data.name
+        })
+      )
     }
 
     fetchData()
@@ -161,5 +165,3 @@ function Aside() {
     </div>
   )
 }
-
-export default Aside
