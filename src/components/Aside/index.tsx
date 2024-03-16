@@ -13,12 +13,11 @@ import styles from './index.module.css'
 const asideInfo = {
   tech: [
     'JavaScript',
+    'TypeScript',
+    'SAPUI5',
     'ReactJS',
     'NodeJS',
     'Git',
-    'GitHub',
-    'HTML',
-    'CSS',
     'JAVA'
   ],
 
@@ -26,7 +25,7 @@ const asideInfo = {
     {
       company: 'Lab2Dev',
       date: '2022 - Currently',
-      office: 'Developer'
+      office: 'Web Developer'
     }
   ],
 
@@ -35,6 +34,11 @@ const asideInfo = {
       school: 'ITB Brasílio Flores de Azevedo',
       date: '2020 - 2022',
       description: 'Technical high school in Systems Development'
+    },
+    {
+      school: 'Estácio University',
+      date: '2023 - 2027',
+      description: 'Computer Science'
     }
   ]
 }

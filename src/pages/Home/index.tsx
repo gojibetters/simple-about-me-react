@@ -3,7 +3,7 @@ import { Aside } from '../../components/Aside'
 import { Header } from '../../components/Header'
 import { Card } from '../../components/Card'
 
-function Home() {
+export function Home() {
   return (
     <div className={styles.container}>
       <Aside />
@@ -14,5 +14,3 @@ function Home() {
     </div>
   )
 }
-
-export default Home

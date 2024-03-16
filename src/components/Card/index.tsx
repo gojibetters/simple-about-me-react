@@ -1,8 +1,6 @@
 import { useCard } from './useCard'
 import styles from './index.module.css'
-import star from '../../assets/star.svg'
-import gitBranch from '../../assets/git-branch.svg'
-import yellipse from '../../assets/yellipse.svg'
+import { star, gitBranch, yellipse } from '../../assets'
 
 export function Card() {
 
