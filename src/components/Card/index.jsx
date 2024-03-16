@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import star from '../../assets/star.svg'
+import gitBranch from '../../assets/git-branch.svg'
+import yellipse from '../../assets/yellipse.svg'
 import styles from './index.module.css'
 
 function Card() {
@@ -15,7 +18,7 @@ function Card() {
     }
 
     fetchData()
-  }, [repositorys])
+  }, [])
 
   return (
     <section className={styles.sectionRepository}>
@@ -32,13 +35,13 @@ function Card() {
 
             <div className={styles.stats}>
               <div className={styles.statsNumber}>
-                <img src={require('../../assets/star.svg').default} alt="" />
+                <img src={star} alt="" />
                 <div className={styles.stars}>
                   {repository.stargazers_count}
                 </div>
 
                 <img
-                  src={require('../../assets/git-branch.svg').default}
+                  src={gitBranch}
                   alt=""
                 />
                 <div className={styles.forks}>{repository.forks}</div>
@@ -47,7 +50,7 @@ function Card() {
               {repository.language ? (
                 <div className={styles.languageIcon}>
                   <img
-                    src={require('../../assets/yellipse.svg').default}
+                    src={yellipse}
                     alt=""
                   />
                   <div>{repository.language}</div>

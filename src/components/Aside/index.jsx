@@ -1,4 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import mapPin from '../../assets/map-pin.svg'
+import briefCase from '../../assets/briefcase.svg'
+import github from '../../assets/github.svg'
+import linkedin from '../../assets/linkedin.svg'
+import mail from '../../assets/mail.svg'
 import styles from './index.module.css'
 
 function Aside() {
@@ -66,7 +71,7 @@ function Aside() {
 
         <div className={styles.socialMedia}>
           <div className={styles.location}>
-            <img src={require('../../assets/map-pin.svg').default} alt="" />
+            <img src={mapPin} alt="" />
             <a
               href="https://www.google.com/search?q=brazil"
               target="_blank"
@@ -77,14 +82,14 @@ function Aside() {
           </div>
 
           <div className={styles.company}>
-            <img src={require('../../assets/briefcase.svg').default} alt="" />
+            <img src={briefCase} alt="" />
             <a href="https://lab2dev.com/" target="_blank" rel="noreferrer">
               {user.company}
             </a>
           </div>
 
           <div className={styles.github}>
-            <img src={require('../../assets/github.svg').default} alt="" />
+            <img src={github} alt="" />
 
             <a
               href="https://github.com/gojibetters"
@@ -96,7 +101,7 @@ function Aside() {
           </div>
 
           <div className={styles.linkedin}>
-            <img src={require('../../assets/linkedin.svg').default} alt="" />
+            <img src={linkedin} alt="" />
             <a
               href="https://www.linkedin.com/in/brunopatez/"
               target="_blank"
@@ -107,7 +112,7 @@ function Aside() {
           </div>
 
           <div className={styles.email}>
-            <img src={require('../../assets/mail.svg').default} alt="" />
+            <img src={mail} alt="" />
             <a href="mailto:brunoapatez@gmail.com">Contact me</a>
           </div>
         </div>
@@ -115,8 +120,8 @@ function Aside() {
         <div className={styles.technologies}>
           <h1>Technologies</h1>
           <ul className={styles.ulTechnologies}>
-            {tech.map(item => {
-              return <li>{item}</li>
+            {tech.map((item, index) => {
+              return <li key={index}>{item}</li>
             })}
           </ul>
         </div>
@@ -125,9 +130,9 @@ function Aside() {
           <h1>Experience</h1>
           <div className={styles.textExperience}>
             <ul className={styles.ulExperience}>
-              {experience.map(item => {
+              {experience.map((item, index) => {
                 return (
-                  <li key={item.id}>
+                  <li key={index}>
                     <h3>{item.company}</h3>
                     <h4>{item.date}</h4>
                     <h5>{item.office}</h5>
@@ -141,9 +146,9 @@ function Aside() {
         <div className={styles.education}>
           <h1>Education</h1>
           <ul className={styles.ulEducation}>
-            {education.map(item => {
+            {education.map((item, index) => {
               return (
-                <li>
+                <li key={index}>
                   <h3>{item.school}</h3>
                   <h4>{item.date}</h4>
                   <h5>{item.description}</h5>
