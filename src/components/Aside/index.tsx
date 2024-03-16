@@ -1,37 +1,43 @@
 import { useEffect, useState } from 'react'
-import mapPin from '../../assets/map-pin.svg'
-import briefCase from '../../assets/briefcase.svg'
-import github from '../../assets/github.svg'
-import linkedin from '../../assets/linkedin.svg'
-import mail from '../../assets/mail.svg'
+
+import {
+  mapPin,
+  briefCase,
+  github,
+  linkedin,
+  mail,
+} from '../../assets'
+
 import styles from './index.module.css'
 
-const tech = [
-  'JavaScript',
-  'ReactJS',
-  'NodeJS',
-  'Git',
-  'GitHub',
-  'HTML',
-  'CSS',
-  'JAVA'
-]
+const asideInfo = {
+  tech: [
+    'JavaScript',
+    'ReactJS',
+    'NodeJS',
+    'Git',
+    'GitHub',
+    'HTML',
+    'CSS',
+    'JAVA'
+  ],
 
-const experience = [
-  {
-    company: 'Lab2Dev',
-    date: '2022 - Currently',
-    office: 'Developer'
-  }
-]
+  experience: [
+    {
+      company: 'Lab2Dev',
+      date: '2022 - Currently',
+      office: 'Developer'
+    }
+  ],
 
-const education = [
-  {
-    school: 'ITB Brasílio Flores de Azevedo',
-    date: '2020 - 2022',
-    description: 'Technical high school in Systems Development'
-  }
-]
+  education: [
+    {
+      school: 'ITB Brasílio Flores de Azevedo',
+      date: '2020 - 2022',
+      description: 'Technical high school in Systems Development'
+    }
+  ]
+}
 
 export function Aside() {
   const [user, setUser] = useState({
@@ -41,24 +47,24 @@ export function Aside() {
     location: '',
     company: '',
     github: '',
-    linkedin: ''
+    linkedIn: ''
   })
 
   useEffect(() => {
     async function fetchData() {
       await fetch('https://api.github.com/users/gojibetters')
-      .then((response) => response.json())
-      .then((data) =>
-        setUser({
-          avatar: data.avatar_url,
-          name: data.name,
-          bio: data.bio,
-          location: data.location,
-          company: data.company,
-          github: data.login,
-          linkedin: data.name
-        })
-      )
+        .then((response) => response.json())
+        .then((data) =>
+          setUser({
+            avatar: data.avatar_url,
+            name: data.name,
+            bio: data.bio,
+            location: data.location,
+            company: data.company,
+            github: data.login,
+            linkedIn: data.name
+          })
+        )
     }
 
     fetchData()
@@ -111,7 +117,7 @@ export function Aside() {
               target="_blank"
               rel="noreferrer"
             >
-              {user.linkedin}
+              {user.linkedIn}
             </a>
           </div>
 
@@ -124,7 +130,7 @@ export function Aside() {
         <div className={styles.technologies}>
           <h1>Technologies</h1>
           <ul className={styles.ulTechnologies}>
-            {tech.map((item, index) => {
+            {asideInfo.tech.map((item, index) => {
               return <li key={index}>{item}</li>
             })}
           </ul>
@@ -134,7 +140,7 @@ export function Aside() {
           <h1>Experience</h1>
           <div className={styles.textExperience}>
             <ul className={styles.ulExperience}>
-              {experience.map((item, index) => {
+              {asideInfo.experience.map((item, index) => {
                 return (
                   <li key={index}>
                     <h3>{item.company}</h3>
@@ -150,7 +156,7 @@ export function Aside() {
         <div className={styles.education}>
           <h1>Education</h1>
           <ul className={styles.ulEducation}>
-            {education.map((item, index) => {
+            {asideInfo.education.map((item, index) => {
               return (
                 <li key={index}>
                   <h3>{item.school}</h3>
