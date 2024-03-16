@@ -8,44 +8,50 @@ export function Card() {
 
   return (
     <section className={styles.sectionRepository}>
-      {repositorys.map(repository => {
-        return (
-          <div className={styles.item} key={repository.id}>
-            <div className={styles.title}>
-              <a href={repository.html_url}>{repository.name}</a>
-            </div>
+      {repositorys.map(repository => (
+        <div className={styles.item} key={repository.id}>
+          <div className={styles.title}>
+            <a href={repository.html_url}>{repository.name}</a>
+          </div>
 
-            <div className={styles.description}>
-              {repository.description ? repository.description : '.'}
-            </div>
+          <div className={styles.description} title={repository.description}>
+            {repository.description || 'No description.'}
+          </div>
 
-            <div className={styles.stats}>
-              <div className={styles.statsNumber}>
+          <div className={styles.stats}>
+            <div className={styles.statsNumber}>
+              <figure>
                 <img src={star} alt="" />
-                <div className={styles.stars}>
-                  {repository.stargazers_count}
-                </div>
+              </figure>
+              <div className={styles.stars}>
+                {repository.stargazers_count}
+              </div>
 
+              <figure>
                 <img
                   src={gitBranch}
                   alt=""
                 />
-                <div className={styles.forks}>{repository.forks}</div>
-              </div>
+              </figure>
+              <div className={styles.forks}>{repository.forks}</div>
+            </div>
 
-              {repository.language ? (
-                <div className={styles.languageIcon}>
+            {repository.language ? (
+              <div className={styles.languageIcon}>
+                <figure>
                   <img
                     src={yellipse}
                     alt=""
                   />
-                  <div>{repository.language}</div>
-                </div>
-              ) : null}
-            </div>
+                </figure>
+
+                <div>{repository.language}</div>
+              </div>
+            ) : null}
           </div>
-        )
-      })}
+        </div>
+      )
+      )}
     </section>
   )
 }

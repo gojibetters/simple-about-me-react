@@ -1,11 +1,23 @@
 .sectionRepository {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex: 1;
   justify-content: center;
-  align-items: center;
+  align-self: center;
 
-  width: 70rem;
+  width: 100%;
+}
+
+.item {
+  width: 20rem;
+
+  color: #837e9f;
+  background-color: #302f3d;
+  border-radius: 1.25rem;
+
+  padding: 1rem;
+  margin: 1rem 0;
+  margin-inline: 1rem;
 }
 
 .title a {
@@ -20,29 +32,15 @@
   margin-right: 0.5rem;
 }
 
-.item {
-  display: flex;
-  flex-direction: column;
-  width: 24.25rem;
-  height: 6rem;
-
-  padding: 1.25rem;
-  border-radius: 1.25rem;
-
-  background-color: #302f3d;
-  margin: 1rem 0 1rem;
-  margin-inline: 1.25rem;
-  color: #837e9f;
-  line-height: 1.25rem;
-}
-
 .description {
   font-weight: 400;
   font-size: 0.875rem;
-  margin-top: 1.25rem;
-  display: inline-block;
+
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+
+  margin-top: .5rem;
 }
 
 .stats {
@@ -50,9 +48,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
   font-weight: 400;
   font-size: 0.875rem;
-  line-height: 1.125rem;
+
   margin-top: 1rem;
 }
 
@@ -70,9 +69,4 @@
   display: flex;
 }
 
-@media (max-width: 1650px) {
-  .sectionRepository {
-    width: 59rem;
-    margin-inline: 3rem;
-  }
-}
+@media (max-width: 1650px) {}

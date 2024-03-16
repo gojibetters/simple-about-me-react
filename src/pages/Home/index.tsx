@@ -7,10 +7,10 @@ export function Home() {
   return (
     <div className={styles.container}>
       <Aside />
-      <div className={styles.repository}>
+      <section className={styles.repository}>
         <Header />
         <Card />
-      </div>
+      </section>
     </div>
   )
 }

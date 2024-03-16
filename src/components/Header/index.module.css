@@ -1,20 +1,16 @@
 .sectionProjects {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
 
-  width: 70rem;
+  width: 100%;
   height: 2.5rem;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+
+  background-color: #302f3d;
+  border-radius: 1.25rem;
 
   padding: 1.5rem;
-  border-radius: 1.25rem;
-  background-color: #302f3d;
-}
-
-.sectionProjects {
-  display: flex;
-  flex-direction: column;
 }
 
 .sectionProjects h1 {
@@ -31,16 +27,4 @@
   color: #837e9f;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
-  align-items: center;
-}
-
-@media (max-width: 1650px) {
-  .sectionProjects {
-    width: 59rem;
-  }
-}
+@media (max-width: 1650px) {}
